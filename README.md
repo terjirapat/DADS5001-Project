@@ -91,6 +91,12 @@ memory usage: 407.0+ KB
 - Eating Price Score คะแนนด้านราคาอาหาร ยิ่งคะแนนสูงราคาอาหารยิ่งแพง
 - Condo Price Per SQM
 
+### Map
+![image](https://user-images.githubusercontent.com/77285026/195907913-fd18dda8-be83-44ea-820d-58993f045819.png)
+![image](https://user-images.githubusercontent.com/77285026/195907936-0b505538-de08-4e06-aa43-261cb004b772.png)
+![image](https://user-images.githubusercontent.com/77285026/195907960-82956d33-d70a-44f9-be24-e594ee4b2586.png)
+
+### Scatter
 ![image](https://user-images.githubusercontent.com/77285026/195904076-5eda2f51-3856-4183-a9d2-9da96d0069a4.png)
 เทียบ Living Score กับ Condo Price Per SQM โดยสีกำหนดโดยสัดส่วน Living Score ที่ได้ต่อ Condo Price Per SQM
 พบว่า Living Score ไปในทางเดียวกับ Condo Price Per SQM แต่เมื่อเทียบสัดส่วนพบว่าราคาต่ำจะมีสัดส่วนที่สูงกว่าราคาสูง สรุปได้ว่าทั้งสองค่าไปในทิศทางเดียวกันแต่เมื่อราคาสูงถึงจุดหนึ่งอาจได้ประโยชน์จากส่วนอื่นที่เพิ่มขึ้นมาแทน
