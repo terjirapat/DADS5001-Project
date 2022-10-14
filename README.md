@@ -45,4 +45,4 @@ memory usage: 407.0+ KB
 ```
 
 # EDA
-image.png
+![image](https://user-images.githubusercontent.com/77285026/195874959-d6e969de-acef-46ba-b311-1177e31af10c.png)
