@@ -12,7 +12,16 @@ Challenge :
 - ข้อมูลราคาค่าเช่าคอนโดมีไม่ครบทุกเขตใน กทม. ซึ่งเกิดจากบางเขตไม่มีคนลงประกาศเช่าใน baania จึงไม่มีข้อมูล
 - แต่ละโครงการมีห้องหลายราคาทำให้ยากต่อการเลือกข้อมูลมาใช้ เพราะ ถ้าเลือกใช้ทุกราคาจะทำให้ค่า mean เพี้ยนเนื่องจากจำนวนที่มากเกินไป เนื่องจากหัวข้อเป็นวิเคราะห์ความคุ้มค่าของการซื้อคอนโด จึงเลือกใช้ห้องราคาต่ำที่สุดของแต่ละโครงการและตัดข้อมูลห้องที่เหลือในโครงการทิ้งไป
 
-# Dataset
+# Importing Datasets
+```
+unit = pd.read_csv('opendata_unittype.csv')
+proj = pd.read_csv('opendata_project.csv')
+liv_sc = pd.read_csv('opendata_living_score.csv')
+eat_sc = pd.read_csv('opendata_eating_score.csv')
+rent_p = pd.read_csv('opendata_median_price_rent.csv')
+```
+
+# Final Dataset
 ```python
 <class 'pandas.core.frame.DataFrame'>
 Int64Index: 2368 entries, 0 to 2367
@@ -45,4 +54,4 @@ memory usage: 407.0+ KB
 ```
 
 # EDA
-image.png
+![image](https://user-images.githubusercontent.com/77285026/195874959-d6e969de-acef-46ba-b311-1177e31af10c.png)
