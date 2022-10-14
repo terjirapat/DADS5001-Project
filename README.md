@@ -41,4 +41,5 @@ Data columns (total 21 columns):
  19  total_listing             2204 non-null   float64       
  20  median_rent_price_sqm     2204 non-null   float64       
 dtypes: datetime64[ns](1), float64(11), object(9)
-memory usage: 407.0+ KB```
+memory usage: 407.0+ KB
+```
