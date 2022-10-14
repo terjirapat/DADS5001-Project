@@ -43,3 +43,6 @@ Data columns (total 21 columns):
 dtypes: datetime64[ns](1), float64(11), object(9)
 memory usage: 407.0+ KB
 ```
+
+# EDA
+image.png
