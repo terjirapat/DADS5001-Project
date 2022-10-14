@@ -58,6 +58,27 @@ memory usage: 407.0+ KB
 
 ![image](https://user-images.githubusercontent.com/77285026/195882672-0d4b4fe7-d39c-4384-b04e-8d99f2e6acd8.png)
 
+# Q&A
+### Q1: ถ้าต้องการซื้อคอนโดเพื่อปล่อยเช่าที่ไหนที่ผลตอบแทนสูงที่สุด?
+![image](https://user-images.githubusercontent.com/77285026/195891704-5a5bd723-8316-440a-858e-bc286f89ebff.png)
+![image](https://user-images.githubusercontent.com/77285026/195891800-39cfbdb0-d8dd-4ac6-82da-f2636868021f.png)
+![image](https://user-images.githubusercontent.com/77285026/195891385-80d5e168-308d-4c96-9421-5923398aec37.png)
+### A1: บางกะปิ ลาดพร้าว ลาดกระบัง ผลตอบแทน 9.21% 9.20% 8.70% ตามลำดับ
+
+### Q2: ราคาคอนโดต่อตารางเมตรของแต่ละเขตในกรุงเทพมีความสัมพันธ์กับความสะดวกในการเดินทางและอาหารการกินไหม
+เทียบจากคะแนน 
+- Living Score คะแนนด้านความสะดวกในการเดินทาง ยิ่งคะแนนสูงความสะดวกในการเดินทางยิ่งมาก
+- Eating Quality Score คะแนนด้านคุณภาพอาหาร ยิ่งคะแนนสูงคุณภาพอาหารยิ่งมาก
+- Eating Price Score คะแนนด้านราคาอาหาร ยิ่งคะแนนสูงราคาอาหารยิ่งแพง
+
+![image](https://user-images.githubusercontent.com/77285026/195892206-50cc423a-db7b-4ed1-af8f-fa54dc5eb2e2.png)
+เทียบ Living Score กับ Condo Price Per SQM โดยสีกำหนดโดยสัดส่วน Living Score ที่ได้ต่อ Condo Price Per SQM
+พบว่า Living Score ไปในทางเดียวกับ Condo Price Per SQM แต่เมื่อเทียบสัดส่วนพบว่าราคาต่ำจะมีสัดส่วนที่สูงกว่าราคาสูง สรุปได้ว่าทั้งสองค่าไปในทิศทางเดียวกันแต่เมื่อราคาสูงถึงจุดหนึ่งอาจได้ประโยชน์จากส่วนอื่นที่เพิ่มขึ้นมาแทน
+
+![image](https://user-images.githubusercontent.com/77285026/195892268-416a0c44-df1f-4241-9e89-4586acbd7503.png)
+พบว่ายิ่ง Condo Price Per SQM สูง
+### A2: เขตที่ราคาคอนโดต่อตารางเมตรสูงยิ่งสะดวกในการเดินทางและคุณภาพอาหารที่ดีแต่ราคาอาหารจะแพง เทียบกับเขตที่ราคาคอนโดต่อตารางเมตรต่ำความสะดวกในการเดินทางและคุณภาพอาหารจะน้อยลงแต่ราคาอาหารจะถูกกว่า
+
 # Data Source
 ## ข้อมูลอสังหา
 ### Bestimate
@@ -66,6 +87,6 @@ memory usage: 407.0+ KB
 - https://gobestimate.com/data-detail/Living-Score-By-Location
 - https://gobestimate.com/data-detail/Eating-Score-By-Location
 - https://gobestimate.com/data-detail/Median-Rental-Price-by-Location
-## แผนที่เขต กทม.
+## ข้อมูลแผนที่
 ### Bangkok GIS
 - http://www.bangkokgis.com/modules.php?m=download_shapefile
