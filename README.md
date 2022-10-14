@@ -66,9 +66,9 @@ memory usage: 407.0+ KB
 
 ### Condo Price Per SQM
 ![image](https://user-images.githubusercontent.com/77285026/195905235-5cd02648-c1b4-4e3e-b97e-1c306f5ab35c.png)
-![image](https://user-images.githubusercontent.com/77285026/195882672-0d4b4fe7-d39c-4384-b04e-8d99f2e6acd8.png)
-![image](https://user-images.githubusercontent.com/77285026/195905614-bdfbf3ea-b684-4c01-a6c4-540f0b7a6303.png)
 ![image](https://user-images.githubusercontent.com/77285026/195905718-4a1105f1-cad0-43c7-a586-bfafc92d3373.png)
+![image](https://user-images.githubusercontent.com/77285026/195905614-bdfbf3ea-b684-4c01-a6c4-540f0b7a6303.png)
+![image](https://user-images.githubusercontent.com/77285026/195882672-0d4b4fe7-d39c-4384-b04e-8d99f2e6acd8.png)
 
 # Q&A
 ## Q1: ถ้าต้องการซื้อคอนโดเพื่อปล่อยเช่าที่ไหนที่ผลตอบแทนสูงที่สุด?
@@ -78,8 +78,8 @@ memory usage: 407.0+ KB
 
 *ข้อมูลค่าเช่าเป็น Median และข้อมูลค่าเช่าไม่มีแบบรายโครงการจึงต้องใช้รายเขตแทน
 
-![image](https://user-images.githubusercontent.com/77285026/195891704-5a5bd723-8316-440a-858e-bc286f89ebff.png)
 ![image](https://user-images.githubusercontent.com/77285026/195891800-39cfbdb0-d8dd-4ac6-82da-f2636868021f.png)
+![image](https://user-images.githubusercontent.com/77285026/195891704-5a5bd723-8316-440a-858e-bc286f89ebff.png)
 
 ![image](https://user-images.githubusercontent.com/77285026/195891385-80d5e168-308d-4c96-9421-5923398aec37.png)
 ### A1: บางกะปิ ลาดพร้าว ลาดกระบัง มีผลตอบแทนสูงที่สุด 9.21% 9.20% 8.70% ตามลำดับ
