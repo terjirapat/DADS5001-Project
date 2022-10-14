@@ -4,12 +4,14 @@ Topic : วิเคราะห์ความคุ้มค่าในกา
 
 Dataset : ข้อมูลอสังหาแต่ละโครงการในประเทศไทยโดยแสดง ที่ตั้ง ราคา พื้นที่และค่าเช่า เป็นต้น โดยเก็บรวบรวมข้อมูลจาก baania ซึ่งเป็นเว็ปไซต์ประกาศขายและเช่าอสังหาริมทรัพย์
 
-Question & Answer : 
-- ถ้าต้องการซื้อคอนโดเพื่อปล่อยเช่าที่ไหนที่ผลตอบแทนสูงที่สุด?
+Question : 
+- ถ้าต้องการซื้อคอนโดเพื่อปล่อยเช่าที่ไหนที่ผลตอบแทนสูงที่สุด
+- ราคาคอนโดต่อตารางเมตรของแต่ละเขตในกรุงเทพมีความสัมพันธ์กับความสะดวกในการเดินทางและอาหารการกินไหม
+- ราคาที่ดินมีผลต่อราคาคอนโดต่อตารางเมตรไหม
 
 Challenge : 
 - ข้อมูลราคาค่าเช่าคอนโดที่ได้เป็นค่า median แยกตามเขต ซึ่งทำให้วิเคราะห์ผลตอบแทนจากค่าเช่ารายโครงการไม่ได้ต้องแยกตามเขตแทน
-- ข้อมูลราคาค่าเช่าคอนโดมีไม่ครบทุกเขตใน กทม. ซึ่งเกิดจากบางเขตไม่มีคนลงประกาศเช่าใน baania จึงไม่มีข้อมูล
+- ข้อมูลที่นำมาใช้เก็บรวบรวมจากเว็ป baania ซึ่งอาจไม่ครอบคลุมข้อมูลจริงทั้งหมด เช่น ข้อมูลราคาค่าเช่าคอนโดมีไม่ครบทุกเขตใน กทม. ซึ่งเกิดจากบางเขตไม่มีคนลงประกาศเช่าใน baania จึงไม่มีข้อมูล
 - แต่ละโครงการมีห้องหลายราคาทำให้ยากต่อการเลือกข้อมูลมาใช้ เพราะ ถ้าเลือกใช้ทุกราคาจะทำให้ค่า mean เพี้ยนเนื่องจากจำนวนที่มากเกินไป เนื่องจากหัวข้อเป็นวิเคราะห์ความคุ้มค่าของการซื้อคอนโด จึงเลือกใช้ห้องราคาต่ำที่สุดของแต่ละโครงการและตัดข้อมูลห้องที่เหลือในโครงการทิ้งไป
 
 # Importing Datasets
@@ -20,6 +22,7 @@ liv_sc = pd.read_csv('opendata_living_score.csv')
 eat_sc = pd.read_csv('opendata_eating_score.csv')
 rent_p = pd.read_csv('opendata_median_price_rent.csv')
 ```
+นำข้อมูลทั้งหมดมา Clean และ Merge เข้าด้วยกัน
 
 # Final Dataset
 ```python
@@ -54,14 +57,27 @@ memory usage: 407.0+ KB
 ```
 
 # EDA
-![image](https://user-images.githubusercontent.com/77285026/195874959-d6e969de-acef-46ba-b311-1177e31af10c.png)
+### Condo Location
+![image](https://user-images.githubusercontent.com/77285026/195904699-b9af3569-3ada-46cd-91b1-251a7bf560ef.png)
 
+### Number of Condos by Districts
+![image](https://user-images.githubusercontent.com/77285026/195904997-f15c9a06-a826-46d6-94b9-d58e1c9b6df4.png)
+![image](https://user-images.githubusercontent.com/77285026/195905075-8d7762c8-c1f6-45a1-88fe-abd7045d1d7e.png)
+
+### Condo Price Per SQM
+![image](https://user-images.githubusercontent.com/77285026/195905235-5cd02648-c1b4-4e3e-b97e-1c306f5ab35c.png)
 ![image](https://user-images.githubusercontent.com/77285026/195882672-0d4b4fe7-d39c-4384-b04e-8d99f2e6acd8.png)
+![image](https://user-images.githubusercontent.com/77285026/195905614-bdfbf3ea-b684-4c01-a6c4-540f0b7a6303.png)
+![image](https://user-images.githubusercontent.com/77285026/195905718-4a1105f1-cad0-43c7-a586-bfafc92d3373.png)
 
 # Q&A
 ## Q1: ถ้าต้องการซื้อคอนโดเพื่อปล่อยเช่าที่ไหนที่ผลตอบแทนสูงที่สุด?
-นำข้อมูลค่าเช่าคอนโดต่อเขตจาก Bestimate มาเทียบกับค่าเฉลี่ยราคาขายคอนโดรายเขตในกรุงเทพ
+ข้อมูลที่ใช้
+- Condo Median Rent Price
+- Condo Price Per SQM
+
 *ข้อมูลค่าเช่าเป็น Median และข้อมูลค่าเช่าไม่มีแบบรายโครงการจึงต้องใช้รายเขตแทน
+
 ![image](https://user-images.githubusercontent.com/77285026/195891704-5a5bd723-8316-440a-858e-bc286f89ebff.png)
 ![image](https://user-images.githubusercontent.com/77285026/195891800-39cfbdb0-d8dd-4ac6-82da-f2636868021f.png)
 
@@ -69,20 +85,25 @@ memory usage: 407.0+ KB
 ### A1: บางกะปิ ลาดพร้าว ลาดกระบัง มีผลตอบแทนสูงที่สุด 9.21% 9.20% 8.70% ตามลำดับ
 
 ## Q2: ราคาคอนโดต่อตารางเมตรของแต่ละเขตในกรุงเทพมีความสัมพันธ์กับความสะดวกในการเดินทางและอาหารการกินไหม
-เทียบจากคะแนน 
+ข้อมูลที่ใช้
 - Living Score คะแนนด้านความสะดวกในการเดินทาง ยิ่งคะแนนสูงความสะดวกในการเดินทางยิ่งมาก
 - Eating Quality Score คะแนนด้านคุณภาพอาหาร ยิ่งคะแนนสูงคุณภาพอาหารยิ่งมาก
 - Eating Price Score คะแนนด้านราคาอาหาร ยิ่งคะแนนสูงราคาอาหารยิ่งแพง
+- Condo Price Per SQM
 
-![image](https://user-images.githubusercontent.com/77285026/195892206-50cc423a-db7b-4ed1-af8f-fa54dc5eb2e2.png)
+![image](https://user-images.githubusercontent.com/77285026/195904076-5eda2f51-3856-4183-a9d2-9da96d0069a4.png)
 เทียบ Living Score กับ Condo Price Per SQM โดยสีกำหนดโดยสัดส่วน Living Score ที่ได้ต่อ Condo Price Per SQM
 พบว่า Living Score ไปในทางเดียวกับ Condo Price Per SQM แต่เมื่อเทียบสัดส่วนพบว่าราคาต่ำจะมีสัดส่วนที่สูงกว่าราคาสูง สรุปได้ว่าทั้งสองค่าไปในทิศทางเดียวกันแต่เมื่อราคาสูงถึงจุดหนึ่งอาจได้ประโยชน์จากส่วนอื่นที่เพิ่มขึ้นมาแทน
 
-![image](https://user-images.githubusercontent.com/77285026/195892268-416a0c44-df1f-4241-9e89-4586acbd7503.png)
+![image](https://user-images.githubusercontent.com/77285026/195904117-574519b8-7fdb-4fca-8aed-47b1f23e2884.png)
 
 ### A2: เขตที่ราคาคอนโดต่อตารางเมตรสูงยิ่งสะดวกในการเดินทางและคุณภาพอาหารที่ดีแต่ราคาอาหารจะแพง เทียบกับเขตที่ราคาคอนโดต่อตารางเมตรต่ำความสะดวกในการเดินทางและคุณภาพอาหารจะน้อยลงแต่ราคาอาหารจะถูกกว่า
 
 ## Q3: ราคาที่ดินมีผลต่อราคาคอนโดต่อตารางเมตรไหม
+ข้อมูลที่ใช้
+- Condo Price Per SQM
+- Bangkok Land Values
+
 ![image](https://user-images.githubusercontent.com/77285026/195898795-ab386320-9f4b-4717-8433-2ccb4a41e942.png)
 ![image](https://user-images.githubusercontent.com/77285026/195898878-ad1b6a38-bb6e-4cb6-aad5-39b95ba75357.png)
 ### A3: มีผล เพราะ พื้นที่ที่ราคาที่ดินสูงมีราคาคอนโดต่อตารางเมตรที่สูงตาม
