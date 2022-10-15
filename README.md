@@ -22,13 +22,21 @@ liv_sc = pd.read_csv('opendata_living_score.csv')
 eat_sc = pd.read_csv('opendata_eating_score.csv')
 rent_p = pd.read_csv('opendata_median_price_rent.csv')
 ```
+- ข้อมูลข้อมูลอสังหาจาก Bestimate
 - Filter เอาแต่ข้อมูลที่เป็นคอนโดใน กทม.
 - ข้อมูลราคาคอนโด Updated ตามราคาประเมินจาก bannia ตามวันที่ล่าสุดที่มีการเปลี่ยนแปลง
 - แต่ละโครงการมีห้องหลายราคาเนื่องจากต้องการคิดค่าเฉลี่ยรายพื้นที่จึง เลือกใช้ห้องราคาต่ำที่สุดของแต่ละโครงการและตัดข้อมูลห้องที่เหลือในโครงการทิ้งไป
 - ราคาค่าเช่าเลือกใช้ค่าเช่าที่มีข้อมูลล่าสุด คือเดือน 1 ปี 2022
 - Clean และ Merge เข้าด้วยกัน
 
+```
+geo = gpd.read_file('district', encoding='cp874')
+gdf = gpd.read_file('land_value', encoding="cp874")
+```
+- ข้อมูลแผนที่เขตกทมและราคาที่ดินจาก Bangkok GIS
+
 # Final Dataset
+### ข้อมูลข้อมูลอสังหาจาก Bestimate
 ```python
 <class 'pandas.core.frame.DataFrame'>
 Int64Index: 2368 entries, 0 to 2367
@@ -58,6 +66,42 @@ Data columns (total 21 columns):
  20  median_rent_price_sqm     2204 non-null   float64       
 dtypes: datetime64[ns](1), float64(11), object(9)
 memory usage: 407.0+ KB
+```
+
+### ข้อมูลแผนที่เขตกทม
+```python
+<class 'geopandas.geodataframe.GeoDataFrame'>
+Int64Index: 50 entries, 0 to 49
+Data columns (total 9 columns):
+ #   Column                Non-Null Count  Dtype   
+---  ------                --------------  -----   
+ 0   geometry              50 non-null     geometry
+ 1   dname                 50 non-null     object  
+ 2   dname_e               50 non-null     object  
+ 3   n_condos              50 non-null     float64 
+ 4   pricesqm              50 non-null     float64 
+ 5   rent_return           50 non-null     float64 
+ 6   living_score          49 non-null     float64 
+ 7   eating_price_score    49 non-null     float64 
+ 8   eating_quality_score  49 non-null     float64 
+dtypes: float64(6), geometry(1), object(2)
+memory usage: 3.9+ KB
+```
+
+### ข้อมูลราคาที่ดิน
+```python
+<class 'geopandas.geodataframe.GeoDataFrame'>
+RangeIndex: 834 entries, 0 to 833
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype   
+---  ------     --------------  -----   
+ 0   name       834 non-null    object  
+ 1   price_min  834 non-null    int64   
+ 2   price_max  834 non-null    int64   
+ 3   remark     834 non-null    object  
+ 4   geometry   834 non-null    geometry
+dtypes: geometry(1), int64(2), object(2)
+memory usage: 32.7+ KB
 ```
 
 # EDA
