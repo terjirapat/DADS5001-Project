@@ -22,6 +22,7 @@ liv_sc = pd.read_csv('opendata_living_score.csv')
 eat_sc = pd.read_csv('opendata_eating_score.csv')
 rent_p = pd.read_csv('opendata_median_price_rent.csv')
 ```
+Filter เอาแต่ข้อมูลที่เป็นคอนโดใน กทม.
 นำข้อมูลทั้งหมดมา Clean และ Merge เข้าด้วยกัน
 
 # Final Dataset
