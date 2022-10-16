@@ -149,6 +149,10 @@ memory usage: 32.7+ KB
 - Eating Price Score คะแนนด้านราคาอาหาร ยิ่งคะแนนสูงราคาอาหารยิ่งแพง
 - Condo Price Per SQM
 
+![image](https://user-images.githubusercontent.com/77285026/196034274-a671aeaf-3b55-4065-be33-91ee437e5469.png)
+![image](https://user-images.githubusercontent.com/77285026/196034310-3a420cdb-0d52-4be5-8691-760d9c71aefb.png)
+![image](https://user-images.githubusercontent.com/77285026/196034312-00ccb090-2dc0-4b83-a7aa-dd724b3d57a2.png)
+
 ### Map
 ![image](https://user-images.githubusercontent.com/77285026/195907913-fd18dda8-be83-44ea-820d-58993f045819.png)
 ![image](https://user-images.githubusercontent.com/77285026/195907936-0b505538-de08-4e06-aa43-261cb004b772.png)
